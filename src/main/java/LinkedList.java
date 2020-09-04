@@ -169,6 +169,52 @@ class LinkedList{
         return temp.data;
     }
 
+    //get the middle value from the list
+
+    public void middle(){
+        Node slow_ptr = head;
+        Node fast_ptr = head;
+
+        if(head != null){
+            while (fast_ptr != null && fast_ptr.next != null){
+                fast_ptr = fast_ptr.next.next;
+                slow_ptr = slow_ptr.next;
+            }
+            System.out.println("The middle element of list is: " + slow_ptr.data);
+        }
+    }
+
+    //count the occurance of element in linked list
+
+    public int times(int n){
+        Node current = head;
+        int count = 0;
+
+        while (current != null){
+            if (n == current.data){
+                count++;
+            }
+            current = current.next;
+        }
+        return count;
+    }
+
+    //remove duplicates from linked list
+
+    public void removeDuplicate(){
+        Node curr = head;
+
+        while (curr != null){
+            Node temp = curr;
+            while (temp != null && temp.data == curr.data){
+                temp = temp.next;
+            }
+            curr.next = temp;
+            curr = curr.next;
+        }
+
+    }
+
     public static void main(String[] args){
         LinkedList llist = new LinkedList();
         llist.head = new Node(1);
@@ -179,6 +225,8 @@ class LinkedList{
         second.next = third;
 
         llist.push(5);
+        llist.push(5);
+        llist.push(5);
         llist.insertAfter(second, 6);
         llist.append(7);
         llist.deleteNode(7);
@@ -188,7 +236,11 @@ class LinkedList{
         System.out.println("If element is present: " + llist.search(2));
         System.out.println("Element at index is : " + llist.index(3));
         System.out.println("Element from last is: " + llist.nthFromLast(2));
+        System.out.println("Number of times element appeared is: " + llist.times(5));
+        llist.removeDuplicate();
 
         llist.printList();
+
+        llist.middle();
     }
 }
