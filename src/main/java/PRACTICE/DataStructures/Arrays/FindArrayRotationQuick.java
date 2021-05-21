@@ -1,4 +1,4 @@
-package PRACTICE.DataStructures;
+package PRACTICE.DataStructures.Arrays;
 
 public class FindArrayRotationQuick {
 

@@ -1,5 +1,4 @@
-package PRACTICE.DataStructures;
-import java.io.*;
+package PRACTICE.DataStructures.Arrays;
 
 public class ArrayRotationReversal {
 

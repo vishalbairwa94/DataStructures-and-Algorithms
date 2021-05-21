@@ -1,4 +1,4 @@
-package PRACTICE.DataStructures;
+package PRACTICE.DataStructures.Arrays;
 
 public class ArrayRotation {
     public static void rotation(int arr[], int d, int n){
